@@ -6,25 +6,34 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
-    color: #343a40;
-    line-height: 1.6;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    animation: fadeIn 1s ease-in-out;
-}
-
-/* Background Image for Homepage */
-body.home {
-    background-image: url('https://www.transparenttextures.com/patterns/cubes.png'), url('https://images.unsplash.com/photo-1512820790803-7f3f85bb6d73'); 
+    background-image: url('/static/images/background_image.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    color: #fff;
+    color: #343a40;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure full viewport height */
 }
+
+.content-container {
+    background: #ffffff; /* Fully white background */
+    width: 80%;
+    max-width: 1200px; /* Adjust max width */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: auto; /* Centers it within flexbox */
+    flex-grow: 1; /* Pushes footer to the bottom */
+    display: flex;
+    flex-direction: column;
+}
+
+
 
 h1, h2 {
     color: #007bff;
@@ -69,6 +78,9 @@ main {
     margin-right: auto;
     flex-grow: 1;
     animation: fadeInUp 1s ease-out;
+    width: 100%;
+    max-width: 100%;
+    height: 700px;
 }
 
 /* Form Styles */
@@ -169,14 +181,13 @@ table a:hover {
 }
 
 /* Footer */
-/* Container for footer */
 .container-footer {
-    margin: 0;
-    padding: 40px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    width: 100%;
     background: #111;
+    padding: 40px 20px;
+    position: relative;
+    bottom: 0;
+    left: 0;
 }
 
 /* Footer Row for flexible layout */
@@ -225,8 +236,14 @@ table a:hover {
 }
 
 .footer-social-network-icons img {
-    width: 20px;
+    width: 20px; /* Adjust the width as needed */
+    height: 20px; /* Adjust the height as needed */
     margin: 0 5px;
+    transition: transform 0.3s ease; /* Optional: Add a smooth hover effect */
+}
+
+.footer-social-network-icons img:hover {
+    transform: scale(1.2); /* Optional: Slightly enlarge icons on hover */
 }
 
 .link-email-footer {
@@ -247,4 +264,8 @@ table a:hover {
     .footer-column {
         margin: 15px 0;
     }
+}
+.failory-logo-image {
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
 }
