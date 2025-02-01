@@ -33,8 +33,6 @@ body {
     flex-direction: column;
 }
 
-
-
 h1, h2 {
     color: #007bff;
     text-align: center;
@@ -53,20 +51,68 @@ nav {
     z-index: 100;
     transition: background-color 0.3s ease;
     animation: slideIn 1s ease-out;
+    display: flex;
+    justify-content: space-between; /* Space between the navbar links and search bar */
+    align-items: center;
 }
 
-nav a {
+.navbar-links {
+    display: flex;
+    justify-content: center; /* Center the navbar links */
+    flex-grow: 1; /* Allow navbar links to take up remaining space */
+}
+
+.navbar-links a {
     color: white;
+    font-size: 18px;
     text-decoration: none;
     padding: 10px 20px;
-    font-size: 1.1rem;
     margin: 0 15px;
     transition: all 0.3s ease;
 }
 
-nav a:hover {
+.navbar-links a:hover {
     background-color: #0056b3;
     border-radius: 5px;
+}
+
+.search-container {
+    background: #fff;
+    border-radius: 30px;
+    padding: 0px 20px; /* Reduced vertical padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.8s;
+    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.3),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+                inset -4px -4px 6px 0 rgba(255,255,255,.2),
+                inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+
+
+.search-container:hover > .search-input{
+    width: 400px;
+}
+
+.search-container .search-input{
+    background: transparent;
+    border: none;
+    outline:none;
+    width: 0px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.8s;
+
+}
+
+.search-container .search-btn .fas{
+    color: #5cbdbb;
+}
+
+.search-container:hover{
+  animation: hoverShake 0.15s linear 3;
 }
 
 /* Main Content */
@@ -80,7 +126,7 @@ main {
     animation: fadeInUp 1s ease-out;
     width: 100%;
     max-width: 100%;
-    height: 700px;
+    height: 100%;
 }
 
 /* Form Styles */

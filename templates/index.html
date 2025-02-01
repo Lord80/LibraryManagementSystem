@@ -3,6 +3,166 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-top: 20px;
+        }
+
+        h2 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sections */
+        section {
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 12px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+
+        /* Buttons */
+        .cta-buttons {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .cta-buttons a {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+
+        .cta-buttons a:hover {
+            background: #2980b9;
+            text-decoration: none;
+        }
+
+        /* Features List */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #ecf0f1;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* How It Works List */
+        ol {
+            padding-left: 20px;
+        }
+
+        ol li {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            background: #3498db;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .why-choose-us h2 {
+            color: white;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .contact-section a {
+            color: #3498db;
+            font-weight: bold;
+        }
+    </style>
+
     <h1>Welcome to the Library Management System</h1>
-    <p>Please <a href="{{ url_for('login') }}">Login</a> or <a href="{{ url_for('register') }}">Register</a> to continue.</p>
+
+    <div class="cta-buttons">
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+    </div>
+
+    <section>
+        <h2>About Our Library</h2>
+        <p>Welcome to our digital library! Here, you can explore a vast collection of books, from classic literature to the latest bestsellers. Our mission is to provide easy access to knowledge and foster a love for reading.</p>
+        <p>Whether you're a student, a professional, or just a curious reader, our library has something for everyone. Dive into our collection and discover new worlds, ideas, and perspectives.</p>
+    </section>
+
+    <section>
+        <h2>Features</h2>
+        <ul>
+            <li><strong>Extensive Collection:</strong> Access thousands of books across various genres.</li>
+            <li><strong>Easy Borrowing:</strong> Lend books with just a few clicks.</li>
+            <li><strong>User-Friendly Interface:</strong> Navigate and find your favorite books effortlessly.</li>
+            <li><strong>Personalized Recommendations:</strong> Get book suggestions based on your reading history.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>How It Works</h2>
+        <ol>
+            <li><strong>Register/Login:</strong> Create an account or log in to get started.</li>
+            <li><strong>Browse Books:</strong> Explore our collection by genre, author, or title.</li>
+            <li><strong>Lend Books:</strong> Select the books you want to read and borrow them.</li>
+            <li><strong>Read & Return:</strong> Enjoy your reading and return the books when done.</li>
+        </ol>
+    </section>
+
+    <section class="why-choose-us">
+        <h2>Why Choose Us?</h2>
+        <p>Our Library Management System is designed to make your reading experience seamless and enjoyable. With a user-friendly interface, a vast collection of books, and easy borrowing options, we aim to be your go-to digital library.</p>
+    </section>
+
+    <section class="contact-section">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, feel free to contact us</a>. We're here to help!</p>
+    </section>
 {% endblock %}
