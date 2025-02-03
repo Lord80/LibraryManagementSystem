@@ -26,3 +26,39 @@
         <button type="submit">Login</button>
     </form>
 {% endblock %}
+
+
+
+-----
+{% extends "base.html" %}
+
+{% block content %}
+<h2>All Books</h2>
+
+<!-- Search Box -->
+<input type="text" id="searchBox" placeholder="Search books by title..." style="margin-bottom: 10px; width: 100%; padding: 8px;">
+
+<!-- Books Table -->
+<table border="1" width="100%">
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Year</th>
+        <th>Action</th>
+    </tr>
+    {% for book in books %}
+    <tr>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.year }}</td>
+        <td>
+            <a href="{{ url_for('borrow_book', book_id=book._id) }}">Borrow</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<!-- Include JavaScript -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+{% endblock %}

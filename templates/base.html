@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Library System{% endblock %}</title>
+    <title>{% block title %}Digital Wisdom{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo_1.jpg') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    
 </head>
 <body>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
@@ -46,9 +46,9 @@
     <div class="container-footer w-container" style="background: #111;">
         <div class="footer-row">
             <div class="footer-column">
-                <img src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/596d33f36607b12cfdaf8ad2_LogoWhite.png" alt="" class="failory-logo-image">
-                <h3 class="footer-failory-name">Failory</h3>
-                <p class="footer-description-failory">Lorem ipsum dolor sit amet.</p>
+                <img src="{{ url_for('static', filename='images/logo_1.jpg') }}" alt="" class="failory-logo-image">
+                <h3 class="footer-failory-name">Digital Wisdom</h3>
+                <p class="footer-description-failory">A Digital Library</p>
             </div>
             <div class="footer-column">
                 <h3 class="footer-titles">Learn</h3>

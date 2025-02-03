@@ -56,8 +56,7 @@ def login():
 @app.route("/dashboard")
 def dashboard():
     if "user" in session:
-        books = mongo.db.books.find()
-        return render_template("dashboard.html", books=books)
+        return redirect(url_for("books")) # Redirect to /books
     return redirect(url_for("login"))
 
 # Add Book Route
@@ -73,6 +72,13 @@ def add_book():
         return redirect(url_for("dashboard"))
 
     return render_template("add_book.html")
+
+@app.route("/books")
+def books():
+    if "user" in session:  # Protect the route
+        books = mongo.db.books.find()
+        return render_template("books.html", books=books)
+    return redirect(url_for("login"))
 
 # Logout
 @app.route("/logout")
